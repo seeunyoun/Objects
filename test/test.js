@@ -1,17 +1,17 @@
-"use strict";
+'use strict'
 class Screening {
   constructor(movie, seqence, whenScreened) {
-    this.movie = movie;
-    this.sequence = seqence;
-    this.whenScreened = whenScreened;
+    this.movie = movie
+    this.sequence = seqence
+    this.whenScreened = whenScreened
   }
   getStartTime() {
-    return this.whenScreened;
+    return this.whenScreened
   }
   isSequence(seqence) {
-    return this.sequence == seqence;
+    return this.sequence == seqence
   }
   getMovieFee() {
-    return this.movie.getFee();
+    return this.movie.getFee()
   }
 }
