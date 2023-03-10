@@ -1,7 +1,7 @@
 class Screening {
   private movie: string;
-  sequence: number;
-  whenScreened: number;
+  private sequence: number;
+  private whenScreened: number;
 
   constructor(movie: string, seqence: number, whenScreened: number) {
     this.movie = movie;
