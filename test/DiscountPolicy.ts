@@ -1,4 +1,8 @@
-abstract class DiscountPolicy {
+interface DiscountPolicy {
+  calcaulateDiscountAmount(screening: string)
+}
+
+abstract class DefaultDiscountPolicy implements DiscountPolicy {
   private conditions: string[]
 
   constructor(conditions: string[]) {
@@ -16,7 +20,7 @@ abstract class DiscountPolicy {
   protected abstract getDiscountAmount(Screening: object)
 }
 
-class AmountDiscountPolicy extends DiscountPolicy {
+class AmountDiscountPolicy extends DefaultDiscountPolicy {
   private discountAmount: number
 
   constructor(discountAmount: number, conditions: string[]) {
@@ -29,7 +33,7 @@ class AmountDiscountPolicy extends DiscountPolicy {
   }
 }
 
-class PercentDiscountPolicy extends DiscountPolicy {
+class PercentDiscountPolicy extends DefaultDiscountPolicy {
   private percent: number
 
   constructor(percent: number, conditions: string[]) {
@@ -42,8 +46,8 @@ class PercentDiscountPolicy extends DiscountPolicy {
   }
 }
 
-class NoneDiscountPolicy extends DiscountPolicy {
-  protected getDiscountAmount(screening: string) {
+class NoneDiscountPolicy implements DiscountPolicy {
+  protected calcaulateDiscountAmount(screening: string) {
     return Money.ZERO
   }
 }
