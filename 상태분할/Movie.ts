@@ -1,12 +1,9 @@
+import { discountConditions } from './DiscountConditions'
+
 interface movieType {
   AMOUNT_DISCOUNT: 'AMOUNT_DISCOUNT'
   PERCENT_DISCOUNT: 'PERCENT_DISCOUNT'
   NONE_DISCOUNT: 'NONE_DISCOUNT'
-}
-
-interface discountConditions {
-  SEQUENCE: 'SEQUENCE'
-  PERIOD: 'PERIOD'
 }
 
 class Movie2 {
