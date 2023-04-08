@@ -1,16 +1,22 @@
-import { discountConditions } from './DiscountConditions'
+import { discountConditionType } from './DiscountConditions'
 
-interface movieType {
-  AMOUNT_DISCOUNT: 'AMOUNT_DISCOUNT'
-  PERCENT_DISCOUNT: 'PERCENT_DISCOUNT'
-  NONE_DISCOUNT: 'NONE_DISCOUNT'
+export interface movieType {
+  AMOUNT_DISCOUNT: string
+  PERCENT_DISCOUNT: string
+  NONE_DISCOUNT: string
 }
 
-class Movie2 {
+export const movieType: movieType = {
+  AMOUNT_DISCOUNT: 'AMOUNT_DISCOUNT',
+  PERCENT_DISCOUNT: 'PERCENT_DISCOUNT',
+  NONE_DISCOUNT: 'NONE_DISCOUNT',
+}
+
+export class Movie2 {
   private title: string
   private runningTime: number
   private fee: number
-  private discountConditions: discountConditions
+  private discountConditions: string[]
 
   private movieType: movieType
   private discountAmount: number
@@ -20,7 +26,7 @@ class Movie2 {
     title: string,
     runningTime: number,
     fee: number,
-    discountConditions: discountConditions,
+    discountConditions: string[],
     movieType: movieType,
     discountAmount: number,
     discountPercent: number,
@@ -51,10 +57,11 @@ class Movie2 {
   }
 
   getDiscountConditions() {
-    return Collections.unmodifiableList(this.discountConditions)
+    // 뭔진 모르겠지만 list가 리턴.
+    return Collections.unmodifiableList(this.discountConditions) || []
   }
 
-  setDiscountConditions(discountConditions: discountConditions) {
+  setDiscountConditions(discountConditions: string[]) {
     this.discountConditions = discountConditions
   }
 

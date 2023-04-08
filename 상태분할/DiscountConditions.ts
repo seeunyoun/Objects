@@ -1,10 +1,10 @@
-export interface discountConditions {
-  SEQUENCE: 'SEQUENCE'
-  PERIOD: 'PERIOD'
+export interface discountConditionType {
+  SEQUENCE: string
+  PERIOD: string
 }
 
-class DiscountCondition2 {
-  private type: discountConditions
+export class DiscountCondition2 {
+  private type: discountConditionType
   private sequence: number
 
   private dayOfWeek: number
@@ -12,7 +12,7 @@ class DiscountCondition2 {
   private endTime: number
 
   constructor(
-    type: discountConditions,
+    type: discountConditionType,
     sequence: number,
     dayOfWeek: number,
     startTime: number,
@@ -29,7 +29,7 @@ class DiscountCondition2 {
     return this.type
   }
 
-  setType(type: discountConditions) {
+  setType(type: discountConditionType) {
     this.type = type
   }
 
@@ -50,7 +50,7 @@ class DiscountCondition2 {
   }
 
   getEndTime() {
-    return this.getEndTime
+    return this.endTime
   }
 
   setEndTime(endTime: number) {

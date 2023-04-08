@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Reservation2 = void 0;
 class Reservation2 {
     constructor(customer, screening, fee, audienceCount) {
         this.customer = customer;
@@ -31,3 +33,4 @@ class Reservation2 {
         this.audienceCount = audienceCount;
     }
 }
+exports.Reservation2 = Reservation2;

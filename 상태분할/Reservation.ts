@@ -1,4 +1,4 @@
-class Reservation2 {
+export class Reservation2 {
   private customer: string
   private screening: string
   private fee: number

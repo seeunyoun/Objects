@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DiscountCondition2 = void 0;
 class DiscountCondition2 {
     constructor(type, sequence, dayOfWeek, startTime, endTime) {
         this.type = type;
@@ -27,7 +28,7 @@ class DiscountCondition2 {
         this.startTime = startTime;
     }
     getEndTime() {
-        return this.getEndTime;
+        return this.endTime;
     }
     setEndTime(endTime) {
         this.endTime = endTime;
@@ -39,3 +40,4 @@ class DiscountCondition2 {
         this.sequence = sequence;
     }
 }
+exports.DiscountCondition2 = DiscountCondition2;

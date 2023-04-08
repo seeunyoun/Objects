@@ -1,4 +1,4 @@
-class Screening2 {
+export class Screening2 {
   private movie: string
   private sequence: number
   private whenScreened: number

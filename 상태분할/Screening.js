@@ -1,4 +1,6 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Screening2 = void 0;
 class Screening2 {
     constructor(movie, sequence, whenScreened) {
         this.movie = movie;
@@ -24,3 +26,4 @@ class Screening2 {
         this.sequence = sequence;
     }
 }
+exports.Screening2 = Screening2;

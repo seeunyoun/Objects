@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Money {
     constructor(BigDecimal, ZERO) {
         this.BigDecimal = BigDecimal;
@@ -26,4 +27,5 @@ class Money {
         return amount.compareTo(other.amount) >= 0;
     }
 }
+exports.default = Money;
 Money.ZERO = Money.wons(0);

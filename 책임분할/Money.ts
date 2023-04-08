@@ -1,4 +1,4 @@
-class Money {
+export default class Money {
   private BigDecimal: number
   static ZERO = Money.wons(0)
 

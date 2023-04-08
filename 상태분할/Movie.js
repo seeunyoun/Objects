@@ -1,5 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Movie2 = exports.movieType = void 0;
+exports.movieType = {
+    AMOUNT_DISCOUNT: 'AMOUNT_DISCOUNT',
+    PERCENT_DISCOUNT: 'PERCENT_DISCOUNT',
+    NONE_DISCOUNT: 'NONE_DISCOUNT',
+};
 class Movie2 {
     constructor(title, runningTime, fee, discountConditions, movieType, discountAmount, discountPercent) {
         this.title = title;
@@ -23,7 +29,8 @@ class Movie2 {
         this.fee = fee;
     }
     getDiscountConditions() {
-        return Collections.unmodifiableList(this.discountConditions);
+        // 뭔진 모르겠지만 list가 리턴.
+        return Collections.unmodifiableList(this.discountConditions) || [];
     }
     setDiscountConditions(discountConditions) {
         this.discountConditions = discountConditions;
@@ -41,3 +48,4 @@ class Movie2 {
         this.discountPercent = discountPercent;
     }
 }
+exports.Movie2 = Movie2;
