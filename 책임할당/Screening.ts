@@ -1,3 +1,5 @@
+import { Movie3 } from './Movie'
+
 class Screening {
   private customer: string
   private audienceCount: number
@@ -29,6 +31,6 @@ class Screening {
   }
 
   private calculateFee(audienceCount: number) {
-    return movie.calculateMovieFee(this).times(audienceCount)
+    return new Movie3().calculateMovieFee(this).times(audienceCount)
   }
 }
