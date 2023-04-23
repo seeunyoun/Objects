@@ -1,6 +1,6 @@
 import { Movie3 } from './Movie'
 
-class Screening {
+export class Screening3 {
   private customer: string
   private audienceCount: number
   private movie: string
@@ -32,5 +32,13 @@ class Screening {
 
   private calculateFee(audienceCount: number) {
     return new Movie3().calculateMovieFee(this).times(audienceCount)
+  }
+
+  getWhenScreened() {
+    return this.whenScreened
+  }
+
+  getSequence() {
+    return this.sequence
   }
 }
