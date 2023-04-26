@@ -7,31 +7,31 @@ export enum MovieType {
 }
 
 export class Movie3 {
-  private title: string
-  private runningTime: number
-  private fee: number
-  private discountConditions: any
+  protected title: string
+  protected runningTime: number
+  protected fee: number
+  protected discountConditions: any
 
-  private movieType: MovieType
-  private discountAmount: number
-  private discountPercent: number
+  // private movieType: MovieType
+  // private discountAmount: number
+  // private discountPercent: number
 
   constructor(
     title: string,
     runningTime: number,
     fee: number,
     discountConditions: any,
-    movieType: MovieType,
-    discountAmount: number,
-    discountPercent: number,
+    // movieType: MovieType,
+    // discountAmount: number,
+    // discountPercent: number,
   ) {
     this.title = title
     this.runningTime = runningTime
     this.fee = fee
     this.discountConditions = discountConditions
-    this.movieType = movieType
-    this.discountAmount = discountAmount
-    this.discountPercent = discountPercent
+    // this.movieType = movieType
+    // this.discountAmount = discountAmount
+    // this.discountPercent = discountPercent
   }
 
   calculateMovieFee(screening: any) {
@@ -48,29 +48,33 @@ export class Movie3 {
       .anyMatch((condition: any) => condition.isSatisfiedBy(screening))
   }
 
-  calculateDiscountAmount() {
-    switch (this.movieType) {
-      case AMOUNT_DISCOUNT: {
-        return this.calculateAmountDiscountAmount()
-      }
-      case PERCENT_DISCOUNT: {
-        return this.calculatePercentDiscountAmount()
-      }
-      default: {
-        return this.calculateNoneDiscountAmount()
-      }
-    }
+  protected getFee() {
+    return this.fee
   }
 
-  calculateAmountDiscountAmount() {
-    return this.discountAmount
-  }
+  // calculateDiscountAmount() {
+  //   switch (this.movieType) {
+  //     case AMOUNT_DISCOUNT: {
+  //       return this.calculateAmountDiscountAmount()
+  //     }
+  //     case PERCENT_DISCOUNT: {
+  //       return this.calculatePercentDiscountAmount()
+  //     }
+  //     default: {
+  //       return this.calculateNoneDiscountAmount()
+  //     }
+  //   }
+  // }
 
-  calculatePercentDiscountAmount() {
-    return this.fee.times(this.discountPercent)
-  }
+  // calculateAmountDiscountAmount() {
+  //   return this.discountAmount
+  // }
 
-  calculateNoneDiscountAmount() {
-    return Money.ZERO
-  }
+  // calculatePercentDiscountAmount() {
+  //   return this.fee.times(this.discountPercent)
+  // }
+
+  // calculateNoneDiscountAmount() {
+  //   return Money.ZERO
+  // }
 }
