@@ -1,4 +1,6 @@
-class PeriodCondition {
+import { DiscontCondition3 } from './DiscountCondition'
+
+class PeriodCondition implements DiscontCondition3 {
   private dayOfWeek: number
   private startTime: number
   private endTime: number

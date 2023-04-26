@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class PeriodCondition {
     constructor(dayOfWeek, startTime, endTime) {
         this.dayOfWeek = dayOfWeek;

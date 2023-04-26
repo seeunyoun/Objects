@@ -5,6 +5,10 @@ enum discountConditionType {
   PERIOD,
 }
 
+export interface DiscontCondition3 {
+  isSatisfiedBy(screening: any): boolean
+}
+
 class DiscountConditions {
   private type: discountConditionType
   private sequence: number

@@ -1,4 +1,6 @@
-class SequenceCondition {
+import { DiscontCondition3 } from './DiscountCondition'
+
+class SequenceCondition implements DiscontCondition3 {
   private sequence: number
 
   constructor(sequence: number) {
